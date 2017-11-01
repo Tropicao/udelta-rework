@@ -1,6 +1,25 @@
 #!/bin/bash
 DIR=`pwd`
 OSBIT=`uname -m`
+
+function detect_os() {
+    if [ -f /etc/arch-release ]
+    then
+        OS="archlinux"
+    elif [ -r /etc/rc.d/init/dfunctions ]
+    then
+        OS="redhat"
+    elif [ -f /etc/debian_version ]
+    then
+        OS="debian"
+    else
+        echo "Unssuported system. Please use this software on Debian, RedHat or Archlinux based system"
+        exit 1
+    fi
+    echo "System : ${OS}"
+}
+
+
 echo "System: ${OSBIT}"
 
 if [ ${OSBIT} = "i686" ]; then
@@ -12,15 +31,21 @@ else
 fi
 chmod a+x plugins/CuraEngine/CuraEngine
 
-if [ -f /etc/debian_version ]; then
-	# Debian based system
+detect_os
+
+echo "Installing mandatory packages"
+if [ ${OS} == "debian" ]
+then
 	sudo apt-get install build-essential mono-complete libmono-winforms2.0-cil monodevelop
-fi
-if [ -r /etc/rc.d/init.d/functions ]; then
-	# RedHad based system
+elif [ ${OS} == "redhat" ]
+then
 	sudo yum install -y gcc-c++
 	sudo yum install -y monodevelop
+elif [ ${OS} == "archlinux" ]
+then
+    pacman -S --noconfirm gcc mono
 fi
+
 echo "#!/bin/sh" > repetierHost
 echo "cd ${DIR}" >> repetierHost
 echo "mono RepetierHost.exe -home ${DIR}&" >> repetierHost
