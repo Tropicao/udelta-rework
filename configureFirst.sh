@@ -61,19 +61,26 @@ then
     sudo rm /usr/bin/repetierHost
 fi
 sudo ln -s ${DIR}/repetierHost /usr/bin/repetierHost
-# Make sure current user h	as dialout group access
+
+# Make sure current user belongs to group owning serial TTY devices
 username=`whoami`
-echo "Checking if you are in the dialout group."
-if grep ${username} /etc/group|grep -c dialout; then
-  echo "User already in dialout group. Adding not required."
+if [ ${OS} == "archlinux" ]
+then
+    TTY_GROUP="uucp"
 else
-  echo "Adding user ${username} to the dialout group."
+    TTY_GROUP="dialout"
+fi
+echo "Checking if you are in the ${TTY_GROUP} group."
+if grep ${username} /etc/group|grep -c i${TTY_GROUP}; then
+  echo "User already in ${TTY_GROUP} group. Adding not required."
+else
+  echo "Adding user ${username} to the ${TY_GROUP} group."
   if [ "$(id -u)" != "0" ]; then
-    # sudo adduser $username dialout
-    sudo usermod -a -G dialout $username
+    # sudo adduser $username ${TTY_GROUP}
+    sudo usermod -a -G ${TTY_GROUP} $username
   else
-    # adduser $username dialout
-    usermod -a -G dialout $username
+    # adduser $username ${TTY_GROUP}
+    usermod -a -G ${TTY_GROUP} $username
   fi
   echo "You need to login again in order to connect to your printer."
 fi
@@ -84,7 +91,7 @@ g++ SetBaudrate.cpp -o SetBaudrate
 echo "Configuration finished."
 #echo "Make sure, your user has permission to connect to the serial port."
 #echo "For debian and clones use:"
-#echo "usermod -a -G dialout yourUserName"
+#echo "usermod -a -G ${TTY_GROUP} yourUserName"
 echo "IMPORTANT: In addition to the bundled CuraEngine, the host also"
 echo "supports Slic3r and Skeinforge. These slicers are not bundled, so"
 echo "need to install them according to their docs and then set the path"
