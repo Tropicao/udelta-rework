@@ -56,7 +56,10 @@ sudo chmod a+rx ../RepetierHost
 sudo chmod -R a+r *
 sudo chmod -R a+x data
 sudo chmod a+x installDep*
-sudo rm /usr/bin/repetierHost
+if [ -f /usr/bin/repetierHost ]
+then
+    sudo rm /usr/bin/repetierHost
+fi
 sudo ln -s ${DIR}/repetierHost /usr/bin/repetierHost
 # Make sure current user h	as dialout group access
 username=`whoami`
