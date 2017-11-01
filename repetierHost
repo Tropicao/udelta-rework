@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/rock/RepetierHost
+mono RepetierHost.exe -home /home/rock/RepetierHost&

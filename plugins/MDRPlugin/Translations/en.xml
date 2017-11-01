@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<translation revision="4" language="English" languageInEnglish="English" author="Rock;contact@emotion-tech.com;Hugo FLYE">
+  <t id="AboutPlugin" ver="1">\r\n\r\nMicro Delta Rework Plugin v1.0\r\nwritten by Hugo Flye from eMotion Tech \r\nwww.emotion-tech.com</t>
+  <t id="PluginName" ver="1">MDRPlugin</t>
+  <t id="tab_Name" ver="1">µDeltaRework</t>
+  <t id="Connect_your_printer" ver="1">Please connect your printer!</t>
+  <t id="Setup_your_probe" ver="1">Please place your probe</t>
+  <t id="Calibrating" ver="1">Calibrating...</t>
+  <t id="Calibration_failed_probe" ver="1">Auto-calibration failed, please check your probe and retry</t>
+  <t id="Calibration_avorted" ver="1">Auto-calibration avorted</t>
+  <t id="Next" ver="1">Next</t>
+  <t id="Calibration" ver="1">Begin calibration</t>
+  <t id="Calibration_done" ver="1">Bed calibration complete. Click "next" to calibration the maximum height</t>
+  <t id="Calibration_height" ver="1">Remove your probe and place a sheet of paper in the center of your bed</t>
+  <t id="move_Z" ver="1">Move your hotend until the hotend touch the paper and maintain it</t>
+  <t id="Calibration_completed" ver="1">Calibration completed. You can now print!</t>
+  <t id="Stop_Calibration" ver="1">Stop calibration</t>
+  <t id="Wait_avort" ver="1">Calibration in progress... Calibration will be avorted after this operation.</t>
+  <t id="Sure_probe_in_place" ver="1">Please double check that your sensor is correctly plugged and tightly screwed, press "Next" to continue.</t>
+  <t id="Sure_probe_removed" ver="1">Please double check that your sensor is correctly removed from your printer, press "Next" to continue</t>
+  <t id="Save_calibration" ver="1">Save calibration</t>
+  
+</translation>

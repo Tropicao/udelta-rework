@@ -1,0 +1,20 @@
+<values>
+<value name="transferProtocol"
+type="int">0</value>
+<value name="resetOnConnect"
+type="int">2</value>
+<value name="baud"
+type="string">115200</value>
+<value name="port"
+type="string">/dev/tty</value>
+<value name="receiveCacheSize"
+type="int">63</value>
+<value name="communicationTimeout"
+type="int">40</value>
+<value name="slicerSelection"
+type="string">curaengine</value>
+<value name="resetOnEmergency"
+type="int">2</value>
+<value name="pingPong"
+type="int">1</value>
+</values>

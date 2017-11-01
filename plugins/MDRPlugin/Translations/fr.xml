@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<translation revision="4" language="Français" languageInEnglish="French" author="Hugo;contact@emotion-tech.com;Hugo FLYE">
+  <t id="AboutPlugin" ver="1">\r\n\r\nMicroDelta Rework Plugin v1.0\r\nwritten by Hugo Flye from eMotion Tech \r\nwww.emotion-tech.com</t>
+  <t id="PluginName" ver="1">MDRPlugin</t>
+  <t id="tab_Name" ver="1">MicroDelta_Rework</t>
+  <t id="Connect_your_printer" ver="1">Connectez d'abord votre imprimante !</t>
+  <t id="Setup_your_probe" ver="1">Positionnez et branchez votre capteur</t>
+  <t id="Calibrating" ver="1">Calibration en cours...</t>
+  <t id="Calibration_failed_probe" ver="1">Calibration non réalisée, vérifiez que votre capteur soit bien mis en place et recommencez</t>
+  <t id="Calibration_avorted" ver="1">Calibration non réalisée</t>
+  <t id="Next" ver="1">Poursuivre</t>
+  <t id="Calibration" ver="1">Lancer la calibration</t>
+  <t id="Calibration_done" ver="1">Calibration du lit terminée. Cliquez sur "Poursuivre" pour calibrer la hauteur maximale</t>
+  <t id="Calibration_height" ver="1">Enlevez votre capteur et placez une feuille de papier au centre de votre plateau</t>
+  <t id="move_Z" ver="1">Descendez la tête jusqu'à toucher la feuille et légèrement la maintenir</t>
+  <t id="Calibration_completed" ver="1">La calibration est terminée, il ne vous reste plus qu'à imprimer.</t>
+  <t id="Stop_Calibration" ver="1">Quittez le mode calibration</t>
+  <t id="Wait_avort" ver="1">Procédure d'arrêt du mode de calibration en cours... En attente de réponse de l'imprimante</t>
+  <t id="Sure_probe_in_place" ver="1">Soyez bien sûr que votre capteur soit correctement branché et vissé, voulez-vous continuer ?</t>
+  <t id="Sure_probe_removed" ver="1">Veuillez vérifier que votre capteur soit retiré de votre imprimante, voulez-vous continuer ?</t>
+  <t id="Save_calibration" ver="1">Sauver calibration</t>
+</translation>
