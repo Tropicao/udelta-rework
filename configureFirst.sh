@@ -108,7 +108,6 @@ mkdir -p ~/.local/share/RepetierHost/
 cp -r eMotionTech/CuraEngine/ ~/.local/share/RepetierHost/
 mkdir -p ~/.mono/registry/CurrentUser/software/
 cp -r eMotionTech/repetier ~/.mono/registry/CurrentUser/software/
-chmod a+x installDependenciesDebian
 ./installDependenciesDebian
 
 
