@@ -68,7 +68,7 @@ int set_baudrate(int handle, int baud) {
     exit(-2);
   }
   cerr << "actual baud: " << ios.c_ispeed << endl;
-  if(abs(baud - ios.c_ispeed) * 100 / baud >= 5) {
+  if(abs(baud - (int)ios.c_ispeed) * 100 / baud >= 5) {
     cerr << "error: couldn't set desired baud rate " << baud << " got " << ios.c_ispeed << endl;
     exit(-2);
   }
