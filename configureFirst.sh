@@ -102,6 +102,7 @@ echo ""
 echo "IMPORTANT: You need a recent mono version since the host uses .NET 4.0"
 echo "If you see the following error message, your mono is too old!"
 echo ">>> System.Windows.Forms.SplitContainer doesn't implement interface System.ComponentModel.ISupportInitialize <<<"
+export OS
 bash ${DIR}/createDesktopIcon.sh
 mkdir -p /.local/share/RepetierHost/
 cp -r eMotionTech/CuraEngine/ ~/.local/share/RepetierHost/

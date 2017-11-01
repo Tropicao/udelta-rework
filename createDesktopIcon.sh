@@ -1,4 +1,16 @@
 #!/bin/bash
+
+if [ ${OS} == "debian" ]
+then
+	sudo apt-get -y install desktop-file-utils shared-mime-info
+elif [ ${OS} == "redhat" ]
+then
+	sudo yum install -y desktop-file-utils shared-mime-info
+elif [ ${OS} == "archlinux" ]
+then
+    pacman -S --noconfirm desktop-file-utils shared-mime-info
+fi
+
 sudo cp RepetierHostMimeTypes.xml /usr/share/mime/packages/
 sudo update-mime-database /usr/share/mime
 user=$(whoami)
