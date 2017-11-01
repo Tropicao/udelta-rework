@@ -108,6 +108,15 @@ mkdir -p ~/.local/share/RepetierHost/
 cp -r eMotionTech/CuraEngine/ ~/.local/share/RepetierHost/
 mkdir -p ~/.mono/registry/CurrentUser/software/
 cp -r eMotionTech/repetier ~/.mono/registry/CurrentUser/software/
-./installDependenciesDebian
+if [ ${OS} == "debian" ]
+then
+    ./installDependenciesDebian
+elif [ ${OS} == "redhat" ]
+then
+    ./installDependenciesFedora
+elif [ ${OS} == "archlinux" ]
+then
+    ./installDependenciesArchlinux
+fi
 
 
