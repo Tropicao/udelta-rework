@@ -45,7 +45,7 @@ then
 	sudo yum install -y monodevelop
 elif [ ${OS} == "archlinux" ]
 then
-    pacman -S --noconfirm gcc mono
+    sudo pacman -S --noconfirm gcc mono
 fi
 
 echo "#!/bin/sh" > repetierHost
