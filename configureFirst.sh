@@ -41,8 +41,10 @@ then
 	sudo apt-get -y install build-essential mono-complete libmono-winforms2.0-cil monodevelop
 elif [ ${OS} == "redhat" ]
 then
-	sudo yum install -y gcc-c++
-	sudo yum install -y monodevelop
+	sudo yum install -y yum-utils gcc-c++
+    sudo rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+    sudo yum-config-manager --add-repo http://download.mono-project.com/repo/centos7/
+    sudo yum install -y mono-devel
 elif [ ${OS} == "archlinux" ]
 then
     sudo pacman -S --noconfirm gcc mono
