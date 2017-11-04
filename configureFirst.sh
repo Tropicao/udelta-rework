@@ -8,7 +8,7 @@ function detect_os() {
     if [ -f /etc/arch-release ]
     then
         OS="archlinux"
-    elif [ -r /etc/rc.d/init/dfunctions ]
+    elif [ -f /etc/redhat-release ] || [ -f /etc/centos-release ]
     then
         OS="redhat"
     elif [ -f /etc/debian_version ]
