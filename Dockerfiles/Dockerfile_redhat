@@ -1,9 +1,10 @@
-FROM centos
+FROM centos:7
 
 RUN yum update -y
+RUN yum install -y sudo
 RUN useradd -ms /bin/bash emotion
 RUN passwd -d emotion
-RUN echo "emotion ALL=(ALL) ALL" > /etc/sudoers.d/user && chmod 0440 /etc/sudoers.d/user
+RUN echo "emotion ALL=(ALL) ALL" > /etc/sudoers && chmod 0440 /etc/sudoers
 ADD . /home/emotion/RepetierHost
 RUN chown -R emotion /home/emotion/RepetierHost
 WORKDIR /home/emotion/RepetierHost
