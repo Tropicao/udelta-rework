@@ -1,0 +1,12 @@
+FROM centos
+
+RUN yum update -y
+RUN useradd -ms /bin/bash emotion
+RUN passwd -d emotion
+RUN echo "emotion ALL=(ALL) ALL" > /etc/sudoers.d/user && chmod 0440 /etc/sudoers.d/user
+ADD . /home/emotion/RepetierHost
+RUN chown -R emotion /home/emotion/RepetierHost
+WORKDIR /home/emotion/RepetierHost
+USER emotion
+
+CMD ./configureFirst.sh

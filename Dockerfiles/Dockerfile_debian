@@ -1,0 +1,14 @@
+FROM debian:jessie
+
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install sudo
+RUN useradd -ms /bin/bash emotion
+RUN passwd -d emotion
+RUN echo "emotion ALL=(ALL) ALL" > /etc/sudoers && chmod 0440 /etc/sudoers
+ADD . /home/emotion/RepetierHost
+RUN chown -R emotion /home/emotion/RepetierHost
+WORKDIR /home/emotion/RepetierHost
+USER emotion
+
+CMD ./configureFirst.sh
