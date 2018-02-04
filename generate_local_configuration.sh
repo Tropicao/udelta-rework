@@ -89,8 +89,8 @@ function generate_host_desktop_file ()
     echo "Type=Application" >> $HOST_CONFIG
     echo "StartupNotify=true" >> $HOST_CONFIG
     echo "Comment=Repetier-Host 3d printer host software" >> $HOST_CONFIG
-    echo "Path=/home/rock/RepetierHost" >> $HOST_CONFIG
-    echo "Icon=/home/rock/RepetierHost/repetier-logo.png" >> $HOST_CONFIG
+    echo "Path=$DIR" >> $HOST_CONFIG
+    echo "Icon=$DIR/repetier-logo.png" >> $HOST_CONFIG
     echo "MimeType=application/sla;text/gcode;application/wavefront-obj;application/x-amf;" >> $HOST_CONFIG
 }
 
