@@ -54,5 +54,48 @@ functions generate_window_values_xml ()
     echo "</values>" >> $HOST_CONFIG
 }
 
+function generate_desktop_file ()
+{
+    HOST_CONFIG=$DIR/Repetier-Host.desktop
+    echo "[Desktop Entry]" > $HOST_CONFIG
+    echo "Name=Repetier-Host" >> $HOST_CONFIG
+    echo "Exec=mono RepetierHost.exe -home $DIR/RepetierHost&" >> $HOST_CONFIG
+    echo "Type=Application" >> $HOST_CONFIG
+    echo "StartupNotify=true" >> $HOST_CONFIG
+    echo "Comment=Repetier-Host 3d printer host software" >> $HOST_CONFIG
+    echo "Path=$DIR" >> $HOST_CONFIG
+    echo "Icon=$DIR/repetier-logo.png" >> $HOST_CONFIG
+    echo "Comment[en_US.UTF-8]=Repetier Host" >> $HOST_CONFIG
+    echo "Name[en_US]=Repetier" >> $HOST_CONFIG
+    echo "" >> $HOST_CONFIG
+    echo "[Desktop Entry]" >> $HOST_CONFIG
+    echo "Name=Repetier-Host" >> $HOST_CONFIG
+    echo "Exec=mono RepetierHost.exe -home $DIR/RepetierHost&" >> $HOST_CONFIG
+    echo "Type=Application" >> $HOST_CONFIG
+    echo "StartupNotify=true" >> $HOST_CONFIG
+    echo "Comment=Repetier-Host 3d printer host software" >> $HOST_CONFIG
+    echo "Path=/rh/linux/RepetierHost" >> $HOST_CONFIG
+    echo "Icon=/rh/linux/RepetierHost/repetier-logo.png" >> $HOST_CONFIG
+    echo "Comment[en_US.UTF-8]=Repetier Host" >> $HOST_CONFIG
+    echo "Name[en_US]=Repetier-Host" >> $HOST_CONFIG
+}
+
+function generate_host_desktop_file ()
+{
+    HOST_CONFIG=$DIR/repetier-RepetierHost.desktop
+    echo "[Desktop Entry]" > $HOST_CONFIG
+    echo "Name=Repetier-Host" >> $HOST_CONFIG
+    echo "Exec=/usr/bin/mono $DIR/RepetierHost.exe -home $DIR" >> $HOST_CONFIG
+    echo "Type=Application" >> $HOST_CONFIG
+    echo "StartupNotify=true" >> $HOST_CONFIG
+    echo "Comment=Repetier-Host 3d printer host software" >> $HOST_CONFIG
+    echo "Path=/home/rock/RepetierHost" >> $HOST_CONFIG
+    echo "Icon=/home/rock/RepetierHost/repetier-logo.png" >> $HOST_CONFIG
+    echo "MimeType=application/sla;text/gcode;application/wavefront-obj;application/x-amf;" >> $HOST_CONFIG
+}
+
+
 generate_repetier_values_xml
 generate_window_values_xml
+generate_desktop_file
+generate_host_desktop_file
