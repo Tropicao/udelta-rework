@@ -21,6 +21,28 @@ function detect_os() {
     echo "System : ${OS}"
 }
 
+function generate_local_configuration ()
+{
+    HOST_CONFIG="$DIR/eMotionTech/repetier/values.xml"
+    echo "<values>" > $HOST_CONFIG
+    echo "<value name=\"logEnabled\"" >> $HOST_CONFIG
+    echo "type=\"int\">0</value>" >> $HOST_CONFIG
+    echo "<value name=\"reduceToolbarSize\"" >> $HOST_CONFIG
+    echo "type=\"int\">0</value>" >> $HOST_CONFIG
+    echo "<value name=\"workdir\"" >> $HOST_CONFIG
+    echo "type=\"string\">$DIR/.local/share/RepetierHost</value>" >> $HOST_CONFIG
+    echo "<value name=\"demoModelShown\"" >> $HOST_CONFIG
+    echo "type=\"int\">1</value>" >> $HOST_CONFIG
+    echo "<value name=\"currentPrinter\"" >> $HOST_CONFIG
+    echo "type=\"string\">MicroDelta Rework</value>" >> $HOST_CONFIG
+    echo "<value name=\"installPath\"" >> $HOST_CONFIG
+    echo "type=\"string\">$DIR/RepetierHost</value>" >> $HOST_CONFIG
+    echo "<value name=\"disableQualityReduction\"" >> $HOST_CONFIG
+    echo "type=\"int\">0</value>" >> $HOST_CONFIG
+    echo "<value name=\"showHelpBubbles\"" >> $HOST_CONFIG
+    echo "type=\"int\">1</value>" >> $HOST_CONFIG
+    echo "</values>" >> $HOST_CONFIG
+}
 
 echo "System: ${OSBIT}"
 
@@ -109,6 +131,7 @@ bash ${DIR}/createDesktopIcon.sh
 mkdir -p ~/.local/share/RepetierHost/
 cp -r eMotionTech/CuraEngine/ ~/.local/share/RepetierHost/
 mkdir -p ~/.mono/registry/CurrentUser/software/
+generate_local_configuration
 cp -r eMotionTech/repetier ~/.mono/registry/CurrentUser/software/
 if [ ${OS} == "debian" ]
 then
