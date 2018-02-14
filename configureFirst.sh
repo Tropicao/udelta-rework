@@ -37,7 +37,7 @@ detect_os
 echo "Installing mandatory packages"
 if [ ${OS} == "debian" ]
 then
-	sudo apt-get -y install build-essential mono-complete libmono-winforms2.0-cil monodevelop
+	sudo apt-get -y install build-essential mono-complete monodevelop
 elif [ ${OS} == "redhat" ]
 then
 	sudo yum install -y yum-utils gcc-c++
