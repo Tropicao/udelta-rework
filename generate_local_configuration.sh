@@ -23,7 +23,7 @@ function generate_repetier_values_xml ()
     echo "</values>" >> $HOST_CONFIG
 }
 
-functions generate_window_values_xml ()
+function generate_window_values_xml ()
 {
     HOST_CONFIG="$DIR/eMotionTech/repetier/window/values.xml"
     echo "<values>" > $HOST_CONFIG
