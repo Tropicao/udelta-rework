@@ -1,26 +1,20 @@
 # Repetier setup for uDelta Rework
 
 ## What is it ?
-This repository contains necessary files to install Repetier for Emotion Tech printer uDelta rework. The software comes with full Repetier software and uDelta configuration for common slicers.
+This repository contains necessary files to install Repetier for [Emotion Tech printer uDelta rework](https://www.reprap-france.com/produit/1234568619-imprimante-3d-microdelta-rework) on Linux. The software comes with full Repetier software and uDelta configuration for common slicers. This repository is only an update to the archive provided by Emotion Tech website, to ease Repetier installation
 
 ## How to install it ?
-1. Open a terminal
-2. Go to the directory, where you want to have the installation
-3. tar -xzf repetierHostLinux.tgz
-   change tar file accordingly.
-4. cd RepetierHost
-5. sh configureFirst.sh
-6. Make sure your user has permission to use the serial port. On
-   Debian and Fedora this requires membership in group dialout, and to uucp on Arch. The script will try to add you to proper group automatically.
-   To add a user into this group enter:
-      ```usermod -a -G dialout yourUserName```
-7. This directory will now contain a Repetier-Host.desktop file, that you can copy to
-   your desktop to have a icon to start the host with.
+* Clone the repository
+* In the freshly cloned repository, execute configureFirst.sh
+
 
 After that, you have a link in /usr/bin so you can start the host from
 everywhere with ```repetierHost```
 
-Known issues:
+## Something is broken ?
+Please feel free to report any issue opening a Github issue section of this project
+
+## Known issues
 - You may see an OpenGL warning at startup. Ignore it.
 - Sometimes the start fails. Just start again.
 - Some mono versions seem to crash on exit. Ignore the messages as you are already leaving.
