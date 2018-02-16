@@ -3,7 +3,7 @@ FROM debian:stretch
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y dist-upgrade
-RUN apt-get -y install sudo vim
+RUN apt-get -y install sudo vim git
 RUN useradd -ms /bin/bash emotion
 RUN passwd -d emotion
 RUN echo "emotion ALL=(ALL) ALL" > /etc/sudoers && chmod 0440 /etc/sudoers

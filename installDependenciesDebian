@@ -1,14 +1,33 @@
 #!/bin/sh
 
-sudo apt-get -y install git build-essential libgtk2.0-dev libwxgtk2.8-dev libwx-perl libmodule-build-perl libnet-dbus-perl libexpat1-dev	
+sudo apt-get -y install git build-essential libgtk2.0-dev libwxgtk2.8-dev libwx-perl libmodule-build-perl libnet-dbus-perl libexpat1-dev
 sudo apt-get -y install cpanminus libxmu-dev freeglut3-dev
 sudo apt-get -y install curl
 curl -L http://cpanmin.us | perl - --sudo App::cpanminus
 sudo apt-get -y install libwx-perl
+if [ -f /.dockerenv ]
+then
+    WX_BUILD_OPTION="--notest"
+else
+    WX_BUILD_OPTION=""
+fi
+sudo ${CPAN} ${WX_BUILD_OPTION} Wx
 sudo cpanm Boost::Geometry::Utils Math::Clipper Math::ConvexHull Math::ConvexHull::MonotoneChain Math::Geometry::Voronoi Math::PlanePath Moo Wx
 sudo usermod -a -G dialout $LOGNAME
 sudo apt-get -y install mono-devel
-cd Slic3r
-sudo perl Build.PL
-sudo perl Build.PL --gui
+if [ ! -d Slic3r ]
+then
+    echo "Downloading Slic3r sources"
+    git clone https://github.com/alexrj/Slic3r.git
+    cd Slic3r
+    git checkout -b origin/master
+else
+    echo "Using Slic3r local sources"
+    cd Slic3r
+fi
+
+echo "Building Slic3r.."
+export PATH=/usr/bin/vendor_perl:$PATH
+perl Build.PL
+perl Build.PL --gui
 cd ..
